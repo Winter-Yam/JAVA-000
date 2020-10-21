@@ -1,4 +1,4 @@
-package java;
+package clzloader;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -20,7 +20,7 @@ public class CustomClassLoader extends ClassLoader {
 
     @Override
     protected Class<?> findClass(String name) {
-        File file = new File(this.getClass().getResource("/java/Hello.xlass").getPath());
+        File file = new File(this.getClass().getResource("Hello.xlass").getPath());
         int length = (int) file.length();
         byte[] data = new byte[length];
 
