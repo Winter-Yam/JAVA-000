@@ -77,7 +77,7 @@ public class MyHttpOutboundHandler {
             System.out.println(new String(body));
             System.out.println(body.length);
     
-            response = new DefaultFullHttpResponse(HTTP_1_1, CONTINUE, Unpooled.wrappedBuffer(body));
+            response = new DefaultFullHttpResponse(HTTP_1_1, OK, Unpooled.wrappedBuffer(body));
             response.headers().set("Content-Type", "application/json");
             response.headers().setInt("Content-Length", Integer.parseInt(endpointResponse.getFirstHeader("Content-Length").getValue()));
 

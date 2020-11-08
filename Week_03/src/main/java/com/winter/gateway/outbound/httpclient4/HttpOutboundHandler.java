@@ -67,8 +67,6 @@ public class HttpOutboundHandler {
     private void fetchGet(final FullHttpRequest inbound, final ChannelHandlerContext ctx, final String url) {
         final HttpGet httpGet = new HttpGet(url);
         //httpGet.setHeader(HTTP.CONN_DIRECTIVE, HTTP.CONN_CLOSE);
-        httpGet.setHeader("nio", "yanwentao");
-        inbound.headers().set("nio", "yanwentao");
         httpGet.setHeader(HTTP.CONN_DIRECTIVE, HTTP.CONN_CLOSE);
         httpclient.execute(httpGet, new FutureCallback<HttpResponse>() {
             @Override
