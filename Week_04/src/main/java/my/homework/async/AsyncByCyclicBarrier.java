@@ -12,6 +12,7 @@ import java.util.concurrent.CyclicBarrier;
  * CycicBarrier方法
  */
 public class AsyncByCyclicBarrier implements Callbackable{
+    private volatile Integer result = null;
 
     public static void main(String[] args) throws Exception {
 
@@ -19,11 +20,10 @@ public class AsyncByCyclicBarrier implements Callbackable{
     }
 
     public Integer asyncExec() throws Exception{
-        List<Integer> result = new ArrayList<>();
         CyclicBarrier cyclicBarrier = new CyclicBarrier(1, () -> {
-            result.add(Fibonacci.sum());
+            result=Fibonacci.sum();
         });
         cyclicBarrier.await();
-        return result.get(0);
+        return result;
     }
 }

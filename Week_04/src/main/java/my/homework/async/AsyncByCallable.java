@@ -20,13 +20,13 @@ public class AsyncByCallable implements Callbackable {
 
     public Integer asyncExec() throws Exception{
         FutureTask<Integer> fiboTask = new FutureTask<>(
-                () -> Fibonacci.sum()
+                () -> {
+                    Thread.sleep(1000);
+                    return Fibonacci.sum();
+                }
         );
         fiboTask.run();
 
-        while (!fiboTask.isDone()){
-            continue;
-        }
         return fiboTask.get();
     };
 }

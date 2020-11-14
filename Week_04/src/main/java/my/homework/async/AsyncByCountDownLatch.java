@@ -4,32 +4,29 @@ package my.homework.async;
 import my.homework.Fibonacci;
 import my.homework.Output;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.FutureTask;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CyclicBarrier;
 
 /**
- * Thread方法
+ * CountDownLatch方法
  */
-public class AsyncByThread implements Callbackable {
-
+public class AsyncByCountDownLatch implements Callbackable{
     private volatile Integer result = null;
 
     public static void main(String[] args) throws Exception {
 
-        Output.print(new AsyncByThread());
+        Output.print(new AsyncByCountDownLatch());
     }
 
     public Integer asyncExec() throws Exception{
+        CountDownLatch latch = new CountDownLatch(1);
         Thread thread = new Thread(() -> {
             result = Fibonacci.sum();
-        }); 
+            latch.countDown();
+        });
         thread.start();
 
-        while (result==null){
-            continue;
-        }
-
+        latch.await();
         return result;
-    };
+    }
 }
