@@ -1,4 +1,4 @@
-package my.homework.school;
+package my.starter.school.bean;
 
 import java.util.List;
 

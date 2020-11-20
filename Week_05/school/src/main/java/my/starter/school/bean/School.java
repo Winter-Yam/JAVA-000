@@ -1,4 +1,4 @@
-package my.homework.school;
+package my.starter.school.bean;
 
 public class School {
 

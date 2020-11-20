@@ -1,4 +1,4 @@
-package my;
+package my.homework;
 
 import my.homework.bean.XmlBean;
 import org.junit.Test;
