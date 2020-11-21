@@ -1,4 +1,4 @@
-package my.homework.jdbc.gaussdb;
+package my.homework.jdbc.mysql;
 
 
 public class Person {
