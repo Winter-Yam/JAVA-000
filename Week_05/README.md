@@ -4,10 +4,11 @@
 `scr/main/java/my/homework/bean`
 - XML方式
 - Annotation方式
+并test下进行测试
 
 #### 自定义starter
 school模块下为自动配置的starter
-包含对School等对象的创建和属性注入
+包含对School等对象的创建和属性注入，在scr模块下依赖school-starter依赖使用school对象
 
 
 #### JDBC 
