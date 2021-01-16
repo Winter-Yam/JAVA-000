@@ -1,17 +1,15 @@
-package my.homework.mq.activemq.queue;
+package my.homework.mq.activemq.queuetopic;
 
 import org.apache.activemq.command.ActiveMQTopic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsMessagingTemplate;
-import org.springframework.jms.core.JmsTemplate;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import javax.jms.Queue;
 
 @Component
-public class P2PProvider {
+public class ActiveMQProvider {
 
     @Resource
     private JmsMessagingTemplate jmsMessagingTemplate;

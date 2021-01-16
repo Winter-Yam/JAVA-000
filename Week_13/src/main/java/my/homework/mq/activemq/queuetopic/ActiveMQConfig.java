@@ -1,4 +1,4 @@
-package my.homework.mq.activemq.queue;
+package my.homework.mq.activemq.queuetopic;
 
 import org.apache.activemq.command.ActiveMQQueue;
 import org.springframework.context.annotation.Bean;

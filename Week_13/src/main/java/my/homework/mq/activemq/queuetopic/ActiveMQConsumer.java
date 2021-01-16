@@ -1,10 +1,10 @@
-package my.homework.mq.activemq.queue;
+package my.homework.mq.activemq.queuetopic;
 
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
 @Component
-public class P2PConsumer {
+public class ActiveMQConsumer {
 
     @JmsListener(destination = "myqueuue")
     public void receive(String message) {

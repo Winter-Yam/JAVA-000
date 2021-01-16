@@ -1,6 +1,6 @@
 package my.homework.mq.activemq;
 
-import my.homework.mq.activemq.queue.P2PProvider;
+import my.homework.mq.activemq.queuetopic.ActiveMQProvider;
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.springframework.boot.SpringApplication;
@@ -16,7 +16,7 @@ public class ActivemqApplication {
     public static void main(String[] args) {
 
         SpringApplication.run(ActivemqApplication.class, args);
-        P2PProvider p2pProvider = ApplicationContextUtil.getBean(P2PProvider.class);
+        ActiveMQProvider p2pProvider = ApplicationContextUtil.getBean(ActiveMQProvider.class);
         p2pProvider.send("==test==");
     }
 
